@@ -1,5 +1,4 @@
 import { HomeLayout } from "@/modules/home/ui/layouts/home-layout";
-import "./globals.css";
 
 export default function Layout({
   children,

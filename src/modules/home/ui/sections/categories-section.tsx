@@ -1,3 +1,4 @@
+"use client";
 import { FilterCarousel } from "@/components/filter-carousel";
 import { trpc } from "@/trpc/client";
 import { useRouter } from "next/navigation";
@@ -10,9 +11,7 @@ interface CategoriesSectionProps {
 // i am doing not to forhet that were ever i use useSuspenseQuery, i have to wrap it with a Suspense
 export const CategoriesSection = ({ categoryId }: CategoriesSectionProps) => {
   return (
-    <Suspense
-      fallback={<FilterCarousel onSelect={() => {}} isLoading data={[]} />}
-    >
+    <Suspense fallback={<FilterCarousel onSelect={() => {}} data={[]} />}>
       <ErrorBoundary fallback={<p>Error...</p>}>
         <CategoriesSectionSuspense categoryId={categoryId} />
       </ErrorBoundary>
@@ -42,7 +41,7 @@ const CategoriesSectionSuspense = ({ categoryId }: CategoriesSectionProps) => {
   return (
     <FilterCarousel
       onSelect={onSelect}
-      isLoading
+      isLoading={false}
       data={data}
       value={categoryId}
     />

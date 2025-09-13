@@ -60,6 +60,7 @@ export const FilterCarousel = ({
         opts={{
           align: "start",
           dragFree: true,
+          containScroll: "trimSnaps",
         }}
         className="w-full px-12"
       >
@@ -105,7 +106,7 @@ export const FilterCarousel = ({
             ))}
         </CarouselContent>
         <CarouselPrevious className="left-0 z-20" />
-        <CarouselNext className="right-20 z-20" />
+        <CarouselNext className="right-0 z-20" />
       </Carousel>
 
       <div

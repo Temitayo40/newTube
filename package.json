@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:all": "concurrently \"bun run dev\" \"bun run dev:ngrok\" ",
     "build": "next build",
+    "dev:ngrok": "ngrok http --url=hardy-notably-quagga.ngrok-free.app 3000",
     "start": "next start",
     "lint": "next lint"
   },
@@ -49,6 +51,7 @@
     "client-only": "^0.0.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
+    "concurrently": "^9.2.1",
     "date-fns": "^4.1.0",
     "dotenv": "^17.2.2",
     "drizzle-kit": "^0.31.4",

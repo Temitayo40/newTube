@@ -9,9 +9,10 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { Separator } from "@radix-ui/react-separator";
-import { Link, LogOutIcon } from "lucide-react";
+import { FileText, LogOutIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { StudioSidebarHeader } from "./studio-sidebar-header";
+import Link from "next/link";
 
 export function StudioSidebar() {
   const pathName = usePathname();
@@ -28,7 +29,7 @@ export function StudioSidebar() {
                 asChild
               >
                 <Link href="/studio">
-                  <LogOutIcon className="size-5" />
+                  <FileText className="size-5" />
                   <span className="text-sm">Content</span>
                 </Link>
               </SidebarMenuButton>

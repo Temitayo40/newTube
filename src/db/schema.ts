@@ -43,6 +43,11 @@ export const categoryRelations = relations(users, ({ many }) => ({
 export const videos = pgTable("videos", {
   id: uuid("id").primaryKey().defaultRandom(),
   title: text("title").notNull(),
+  muxStatus: text("mux_status"),
+  muxAssetId: text("mux_asset_id"),
+  muxUploadId: text("mux_upload_id"),
+  muxPlaybackId: text("mux_playback_id"),
+  muxTrackId: text("mux_track_id"),
   description: text("description"),
   userId: uuid("user_id")
     .references(() => users.id, {

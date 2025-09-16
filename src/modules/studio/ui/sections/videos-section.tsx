@@ -61,6 +61,14 @@ export const VideoSectionSuspense = () => {
                 >
                   <TableRow className="cursor-pointer">
                     <TableCell>{video.title}</TableCell>
+                    <TableCell>{video.title}</TableCell>
+                    <TableCell>{video.muxStatus}</TableCell>
+                    <TableCell>{video.title}</TableCell>
+                    <TableCell className="text-right">{video.title}</TableCell>
+                    <TableCell className="text-right">{video.title}</TableCell>
+                    <TableCell className="text-right pr-6">
+                      {video.title}
+                    </TableCell>
                   </TableRow>
                 </Link>
               ))}

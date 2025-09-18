@@ -73,6 +73,10 @@ export const videos = pgTable("videos", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
+export const videoSelectSchema = createSelectSchema(videos);
+export const videoInsertSchema = createInsertSchema(videos);
+export const videoUpdateSchema = createUpdateSchema(videos);
+
 // used mainly i n the appliation level, they do npt commit any change to the database
 export const videoRelations = relations(videos, ({ one }) => ({
   user: one(users, {

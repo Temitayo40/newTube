@@ -55,6 +55,7 @@ export const videos = pgTable("videos", {
   muxUploadId: text("mux_upload_id"),
   muxPlaybackId: text("mux_playback_id"),
   muxTrackId: text("mux_track_id"),
+  muxTrackStatus: text("mux_track_status"),
   description: text("description"),
   userId: uuid("user_id")
     .references(() => users.id, {
@@ -63,7 +64,7 @@ export const videos = pgTable("videos", {
     .notNull(),
   thumbnailUrl: text("thumbnail_url"),
   previewUrl: text("previewUrl"),
-  duration: integer("duration"),
+  duration: integer("duration").default(0).notNull(),
   visibility: videosVisibility("visibility").default("private").notNull(),
   categoryId: uuid("category_id").references(() => categories.id, {
     onDelete: "set null",
